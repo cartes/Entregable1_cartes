@@ -1,14 +1,27 @@
 {% extends "parent.html" %}
 
 {% block contenedor %}
-    <form action="" method="POST">
-        {% csrf_token %}
+<hr />
 
-        <table>
-            {{formSeller.as_table}}
+<div class="row justify-content-end">
+    <div class="col-4 text-right">
+        <form action="{% url 'Buscar' %}" method="POST" class="text-right"> {% csrf_token %}
+            <input type="text" name="producto" placeholder="Buscar por titulo de producto">
+            <input type="submit" value="Buscar" class="btn btn-primary">
+        </form>
+        
+    </div>
+</div>
+<hr />
 
-        </table>
-        <input type="submit" value="Enviar" class="btn btn-primary">
+<form action="" method="POST">
+    {% csrf_token %}
 
-    </form>
+    <table>
+        {{formSeller.as_table}}
+
+    </table>
+    <input type="submit" value="Enviar" class="btn btn-primary">
+
+</form>
 {% endblock %}

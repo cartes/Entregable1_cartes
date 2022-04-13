@@ -3,5 +3,6 @@ from AppSeller import views
 
 urlpatterns = [
     path('', views.inicio),
-    path('publicar/', views.publicar)
+    path('publicar/', views.publicar),
+    path('buscar/', views.buscar, name="Buscar"),
 ]

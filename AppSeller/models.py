@@ -16,3 +16,6 @@ class Producto(models.Model):
     descripcion = models.TextField()
     precio = models.FloatField()
     fecha_publicacion = models.DateField()
+
+    def __str__(self):
+        return f"Producto: {self.titulo}"

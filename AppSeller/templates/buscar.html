@@ -1,0 +1,15 @@
+{% extends "parent.html" %}
+
+
+{% block contenedor %}
+
+{% if productos %}
+
+<ul>
+    {% for prod in productos %}
+    <li>{{prod.titulo}}</li>
+    {% endfor %}
+</ul>
+    
+{% endif %}
+{% endblock %}

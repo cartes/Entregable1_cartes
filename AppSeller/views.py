@@ -1,3 +1,5 @@
+from crypt import methods
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from AppSeller.forms import FormularioSeller
@@ -27,3 +29,13 @@ def publicar(request):
 
     return render(request, 'productoFormulario.html', {'formSeller': formSeller})
             
+def buscar(request):
+
+    if request.POST['producto']:
+        producto = request.POST['producto']
+    
+        productos = Producto.objects.filter(titulo__icontains=producto)
+
+        print(productos)
+
+        return render(request, "buscar.html", {"productos": productos})
