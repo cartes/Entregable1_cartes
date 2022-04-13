@@ -1,0 +1,14 @@
+{% extends "parent.html" %}
+
+{% block contenedor %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <table>
+            {{formSeller.as_table}}
+
+        </table>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+
+    </form>
+{% endblock %}
